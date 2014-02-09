@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>WireStation</title>
+		<link href="style.css" rel="stylesheet" type="text/css">
+		<!-- <link href='http://fonts.googleapis.com/css?family=Damion|Nothing+You+Could+Do' rel='stylesheet' type='text/css'> -->
+		<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700|Muli:300,400' rel='stylesheet' type='text/css'>
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	
+	<script>
+		//IDLE SCREEN TIME UPDATE		
+			function startTime()
+			{
+			var today=new Date();
+			var h=today.getHours();
+			var m=today.getMinutes();
+			var s=today.getSeconds();
+			// add a zero in front of numbers<10
+			m=checkTime(m);
+			s=checkTime(s);
+			document.getElementById('lit_time').innerHTML=h+":"+m;
+			t=setTimeout(function(){startTime()},500);
+			}
+			
+			function checkTime(i)
+			{
+			if (i<10)
+			  {
+			  i="0" + i;
+			  }
+			return i;
+			}
+		
+		//IDLE SCREEN SHOWING AND HIDING
+		
+			$( document ).ready(function() {
+    			$( '#mainScreen' ).hide();
+    			$( '#storeScreen' ).hide();
+			});
+			
+			function showMainScreen(old){
+				$( old ).fadeOut("medium");
+				$( '#mainScreen' ).delay( 100 ).fadeIn("medium");
+			}
+			
+			function showIdleScreen(){
+				$( '#mainScreen' ).fadeOut("medium");
+				$( '#idleScreen' ).delay( 100 ).fadeIn("medium");
+			}
+			
+			function showStoreScreen(){
+				$( '#storeScreen' ).delay( 100 ).fadeIn("medium");
+			}
+			
+		//IDLE DETECTION
+		
+		idleTime = 0;
+		$(document).ready(function () {
+		    //Increment the idle time counter every minute.
+		    var idleInterval = setInterval(timerIncrement, 60000); // 1 minute
+		
+		    //Zero the idle timer on mouse movement.
+		    $(this).mousemove(function (e) {
+		        idleTime = 0;
+		    });
+		    $(this).keypress(function (e) {
+		        idleTime = 0;
+		    });
+		});
+		
+		function timerIncrement() {
+		    idleTime = idleTime + 1;
+		    if (idleTime > 9) { // 20 minutes
+		        $( '#mainScreen' ).fadeOut("medium");
+				$( '#idleScreen' ).delay( 100 ).fadeIn("medium");
+		    }
+		}
+		
+	</script>
+	</head>	
+	
+	<body onload="startTime()">
+		<!-- IDLE SCREEN -->
+		<div onclick="showMainScreen()" id="idleScreen" class="themefont">
+			<p class="clock_time">
+				<span id="lit_time"></span>
+				<span id="ante_or_post_meridian">am</span>
+			</p>
+			<p style="text-align:center;margin-top:150px;opacity:0;" id="unlockButton">
+				<span style="font-size:24px;color:#ccc;" class="entypo-cc-nd"></span>
+			</p>
+			
+			<div class="tooltip themefont">
+				<span class="maki-pitch"></span>
+				Workout Active
+			</div>
+		</div>
+		<!-- ACTIVE MAIN HOMESCREEN -->
+		<div id="mainScreen">
+			<div id="homescreen" class="themefont">
+				<table style="width:100%;margin-top:20%;">
+					<tr>
+						<td style="width:30%;padding-left:30px;">
+							<p onclick="showStoreScreen()" class="themefont transparentButton">
+								<span class="entypo-basket"></span> Store
+							</p>
+							<p onclick="showIdleScreen()" class="themefont transparentButton">
+								<span class="entypo-note"></span> My Songs
+							</p>
+							<p onclick="showIdleScreen()" class="themefont transparentButton">
+								<span class="entypo-doc-text"></span> My Playlists
+							</p>
+							<p onclick="showIdleScreen()" class="themefont transparentButton">
+								<span class="entypo-drive"></span> Offline Music
+							</p>
+							<p onclick="showIdleScreen()" class="themefont transparentButton">
+								<span class="entypo-lock-open"></span> Lock
+							</p>
+						</td>
+						<td>
+							&nbsp;
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<!-- STORE SCREEN -->
+		<div id="storeScreen">
+			<div onclick="showMainScreen('#storeScreen')" style="text-align:right;font-size:20px;margin-right:10px;color:#1a1a1a;" class="themefont">
+				<span class="entypo-cancel"></span>
+			</div>
+			<p style="font-size:34px;margin-top:3px;margin-left:20px;color:#1a1a1a;font-family: 'Lato', sans-serif;-webkit-font-smoothing: antialiased;">
+				Store
+			</p>
+		</div>
+		<!-- STORE ENTRY ANIMATION GLYPH
+		<div style="width:600px;height:200px;">
+			&nbsp;
+		</div> -->
+		
+	</body>
+</html>
