@@ -12,7 +12,7 @@
 	
 	<script>
 		//SWIPE FUNCTIONS
-		$.event.special.swipe.verticalDistanceThreshold.showMainScreen();
+	
 		//IDLE SCREEN TIME UPDATE		
 			function startTime()
 			{
@@ -86,7 +86,7 @@
 	
 	<body onload="startTime()">
 		<!-- IDLE SCREEN -->
-		<div onclick="showMainScreen()" id="idleScreen" class="themefont">
+		<div onclick="showMainScreen()" id="idleScreen" class="themefont" swipe="alert('am facut swipe')">
 			<table style="width:100%;	position: absolute; top: 0; bottom: 0;">
 				<tr>
 					<td style="padding-top:20%;text-align:center;">
