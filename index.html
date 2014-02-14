@@ -5,10 +5,14 @@
 		<link href="style.css" rel="stylesheet" type="text/css">
 		<!-- <link href='http://fonts.googleapis.com/css?family=Damion|Nothing+You+Could+Do' rel='stylesheet' type='text/css'> -->
 		<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700|Muli:300,400' rel='stylesheet' type='text/css'>
-		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-		<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css">
+	    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+	    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
 	
 	<script>
+		//SWIPE FUNCTIONS
+		$.event.special.swipe.verticalDistanceThreshold.showMainScreen();
 		//IDLE SCREEN TIME UPDATE		
 			function startTime()
 			{
@@ -83,18 +87,24 @@
 	<body onload="startTime()">
 		<!-- IDLE SCREEN -->
 		<div onclick="showMainScreen()" id="idleScreen" class="themefont">
-			<p class="clock_time">
-				<span id="lit_time"></span>
-				<span id="ante_or_post_meridian">am</span>
-			</p>
-			<p style="text-align:center;margin-top:150px;opacity:0;" id="unlockButton">
-				<span style="font-size:24px;color:#ccc;" class="entypo-cc-nd"></span>
-			</p>
-			
-			<div class="tooltip themefont">
-				<span class="maki-pitch"></span>
-				Workout Active
-			</div>
+			<table style="width:100%;	position: absolute; top: 0; bottom: 0;">
+				<tr>
+					<td style="padding-top:20%;text-align:center;">
+						<div class="tooltip themefont">
+							<span class="maki-pitch"></span>
+							Workout Active
+						</div>						
+					</td>
+				</tr>
+				<tr>
+					<td style="padding-top:20%;">
+						<p class="clock_time">
+							<span id="lit_time"></span>
+							<span id="ante_or_post_meridian">am</span>
+						</p>
+					</td>
+				</tr>
+			</table>
 		</div>
 		<!-- ACTIVE MAIN HOMESCREEN -->
 		<div id="mainScreen">

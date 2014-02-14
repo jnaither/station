@@ -35,7 +35,7 @@
 }
 
 .themefont {
-	font-family: 'Muli', sans-serif;
+	font-family: 'Lato', sans-serif;
 }
 
 /** OLD OLD OLD 
@@ -104,9 +104,8 @@ body {
 
 .clock_time {
 	color:#ccc;
-	font-size:114px;
+	font-size:90px;
 	margin:auto;
-	margin-top:17%;
 	text-align:center;
 	font-family: 'Lato', sans-serif;
 	font-weight:300;
@@ -123,7 +122,7 @@ body {
 } **/
 
 #ante_or_post_meridian {
-	font-size:40px;
+	font-size:30px;
 	margin:0;
 	margin-left:-18px;
 	-moz-user-select: none; 
@@ -136,9 +135,6 @@ body {
 .tooltip {
 	color:#ccc;
 	font-size:14px;
-	position:absolute;
-	left:45%;
-	top:50px;
 	-moz-user-select: none; 
     -khtml-user-select: none; 
     -webkit-user-select: none; 
