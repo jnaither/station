@@ -6,13 +6,20 @@
 		<!-- <link href='http://fonts.googleapis.com/css?family=Damion|Nothing+You+Could+Do' rel='stylesheet' type='text/css'> -->
 		<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700|Muli:300,400' rel='stylesheet' type='text/css'>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-	    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css">
 	    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
 	    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
 	
 	<script>
 		//SWIPE FUNCTIONS
-	
+			$(function(){
+			  // Bind the swipeHandler callback function to the swipe event on div.box
+			  $( "div.box" ).on( "swipe", swipeHandler );
+			 
+			  // Callback function references the event target and adds the 'swipe' class to it
+			  function swipeHandler( event ){
+			    $( event.target ).addClass( "swipe" );
+			  }
+			});
 		//IDLE SCREEN TIME UPDATE		
 			function startTime()
 			{
@@ -42,21 +49,14 @@
     			$( '#mainScreen' ).hide();
     			$( '#storeScreen' ).hide();
 			});
-			
-			function showMainScreen(old){
-				$( old ).fadeOut("medium");
-				$( '#mainScreen' ).delay( 100 ).fadeIn("medium");
-			}
-			
-			function showIdleScreen(){
-				$( '#mainScreen' ).fadeOut("medium");
-				$( '#idleScreen' ).delay( 100 ).fadeIn("medium");
-			}
-			
-			function showStoreScreen(){
-				$( '#storeScreen' ).delay( 100 ).fadeIn("medium");
-			}
-			
+
+			$('#idleScreen').click(function() {
+			  $('#idleScreen').fadeOut('slow', function() {
+			    // Animation complete.
+			  });
+			});
+		
+		
 		//IDLE DETECTION
 		
 		idleTime = 0;
@@ -86,7 +86,7 @@
 	
 	<body onload="startTime()">
 		<!-- IDLE SCREEN -->
-		<div onclick="showMainScreen()" id="idleScreen" class="themefont" swipe="alert('am facut swipe')">
+		<div onclick="showMainScreen()" id="idleScreen" class="themefont box" swipe="alert('am facut swipe')">
 			<table style="width:100%;	position: absolute; top: 0; bottom: 0;">
 				<tr>
 					<td style="padding-top:20%;text-align:center;">
