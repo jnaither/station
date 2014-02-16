@@ -11,22 +11,24 @@
 	
 	<script>
 		//SWIPE FUNCTIONS
-		
-			var colorSet = 'DefaultPink';
+
 			$(function(){
 			  // Bind the swipeHandler callback function to the swipe event on div.box
 			  $( "div.box" ).on( "swipe", swipeHandler );
 			 
 			  // Callback function references the event target and adds the 'swipe' class to it
 			  function swipeHandler( event ){
-			    if (colorSet = 'DefaultPink'){
-			    	$( event.target ).addClass( "swipe" );
-			    }
-			    if (colorSet = 'BlackWhite'){
-			    	$( event.target ).removeClass( "swipe" );
-			    }
-			    
-			    
+			    $( event.target ).addClass( "swipe" );
+			  }
+			});
+			
+			$(function(){
+			  // Bind the swipeHandler callback function to the swipe event on div.box
+			  $( "div.swipe" ).on( "swipe", swipeHandler );
+			 
+			  // Callback function references the event target and removes the 'swipe' class from it
+			  function swipeHandler( event ){
+			    $( event.target ).removeClass( "swipe" );
 			  }
 			});
 		//IDLE SCREEN TIME UPDATE		
