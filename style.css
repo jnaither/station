@@ -34,6 +34,12 @@
 	src: url(fonts/weblysleekusb.ttf);
 }
 
+@font-face
+{
+	font-family: WeblySL;
+	src: url(fonts/weblysleekuisl.ttf);
+}
+
 .themefont {
 	font-family: 'Lato', sans-serif;
 }
@@ -56,113 +62,50 @@ html {
 
 body {
 	margin:0;
-	background-color:#000;
+	background-color:rgba(249,249,249,1);
+	font-family:"Webly";
 }
 
-div.box {
-	background: -webkit-linear-gradient(#2B1E53, #EB585F); /* For Safari */
-	background: -o-linear-gradient(#2B1E53, #EB585F); /* For Opera 11.1 to 12.0 */
-	background: -moz-linear-gradient(#2B1E53, #EB585F); /* For Firefox 3.6 to 15 */
-	background: linear-gradient(#2B1E53, #EB585F); /* Standard syntax */
-}
-
-div.box.swipe {
-	background: -webkit-linear-gradient(#ccc, #000); /* For Safari */
-	background: -o-linear-gradient(#ccc, #000); /* For Opera 11.1 to 12.0 */
-	background: -moz-linear-gradient(#ccc, #000); /* For Firefox 3.6 to 15 */
-	background: linear-gradient(#ccc, #000); /* Standard syntax */
-}
-
-#idleScreen {
-	position: absolute;
-	z-index:7;
-	top: 0;
-	bottom: 0;
-	width:100%;
-}
-
-#mainScreen {
-	position: absolute;
-	z-index:9;
-	top: 0;
-	bottom: 0;
-	width:100%;
-	background-color:#1a1a1a;
-}
-
-#homescreen {
-	position: absolute;
-	z-index:9;
-	top: 0;
-	bottom: 0;
-	width:100%;
-	color:#ccc;
-	font-size:14px;
-}
-
-#storeScreen {
-	position: absolute;
-	z-index:11;
-	top: 80px;
-	bottom: 80px;
-	left: 100px;
-	right: 100px;
-	background-color:#DDDDDD;
-	box-shadow: 0px 2px 10px #1d1d1d;
-}
-
-.clock_time {
-	color:#ccc;
-	font-size:90px;
-	margin:auto;
-	text-align:center;
-	font-family: 'Lato', sans-serif;
-	font-weight:300;
-	-moz-user-select: none; 
-    -khtml-user-select: none; 
-    -webkit-user-select: none; 
-    -o-user-select: none;
-    cursor:pointer;
-}
-
-
-/** .clock_time:hover {
-	-webkit-filter: blur(4px);
-} **/
-
-#ante_or_post_meridian {
-	font-size:30px;
+.margin_reset {
 	margin:0;
-	margin-left:-18px;
-	-moz-user-select: none; 
-    -khtml-user-select: none; 
-    -webkit-user-select: none; 
-    -o-user-select: none;
-    cursor:pointer;
 }
 
-.tooltip {
-	color:#ccc;
-	font-size:14px;
-	-moz-user-select: none; 
-    -khtml-user-select: none; 
-    -webkit-user-select: none; 
-    -o-user-select: none;
-    cursor:pointer;
+.tagline {
+	width:100%;
+	background-color:rgba(249,249,249,0.9);
+	position:fixed;
 }
 
-.transparentButton {
-	color:#ccc;
-	cursor:pointer;
+.tagline_small {
+	height:100px;
 }
 
-.transparentButton:hover {
-	color:#fff;
+.song_list {
+	color:#000;
+	font-size:20px;
+	padding-top:100px;
 }
 
-/** .tooltip:hover {
-	-webkit-filter: blur(4px);
-} **/
+.song_slot {
+	height:75px;
+	width:100%;
+	margin-top:15px;
+	margin-bottom:15px;
+}
+
+.song_artist {
+	font-size:25px;
+	margin-top:-7px;
+}
+
+.song_title {
+	font-size:30px;
+	font-family:"WeblySL";
+}
+
+.song_duration {
+	font-size:20px;
+}
 
 /* #Tablet
 ================================================== */
