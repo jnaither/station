@@ -84,14 +84,14 @@ body {
 .song_list {
 	color:#000;
 	font-size:20px;
-	padding-top:40px;
+	padding-top:60px;
 }
 
 .song_slot {
 	height:75px;
 	width:100%;
-	margin-top:7px;
-	margin-bottom:7px;
+	margin-top:1px;
+	margin-bottom:2px;
 }
 
 .song_artist {
